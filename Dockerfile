@@ -4,9 +4,9 @@ COPY ./local-packages /opt/netbox/local-packages
 
 RUN ls /opt/netbox/local-packages
 
-COPY ./plugin-requirments.txt /opt/netbox/plugin-requirments.txt
+COPY ./plugin_requirements.txt /opt/netbox/plugin_requirements.txt
 
-RUN /opt/netbox/venv/bin/pip install --no-warn-script-location --no-index --find-links=/opt/netbox/local-packages -r /opt/netbox/plugin-requirments.txt
+RUN /opt/netbox/venv/bin/pip install --no-warn-script-location --no-index --find-links=/opt/netbox/local-packages -r /opt/netbox/plugin_requirements.txt
 
 COPY ./configuration/configuration.py /etc/netbox/config/configuration.py
 COPY ./configuration/plugins.py /etc/netbox/config/plugins.py
